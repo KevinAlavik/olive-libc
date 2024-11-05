@@ -1,21 +1,20 @@
-// test/main.c
+// include/stdbool.h
 // Copyright (C) 2024 Kevin Alavik and contributors
 // This file is part of olivelibc, which is licensed under the GNU General Public License v3.0.
 // You may not use this file except in compliance with the License.
 // You can obtain a copy of the License at <https://www.gnu.org/licenses/gpl-3.0.html>
 
-#include <stdio.h>
-#include <stdbool.h>
-#include <iso646.h>
+#ifndef __OLIVE_STDBOOL_H
+#define __OLIVE_STDBOOL_H
 
-int main() {
-	if(true and false != 69) {
-		printf("yey!\n");
-		return 0;
-	} else {
-		printf("fuck :(\n");
-		return 1;
-	}
+#ifndef __cplusplus
 
-	return 0;
-}
+#define true 1 
+#define false 0
+#define bool _Bool
+
+#endif // __cplusplus
+
+#define __bool_true_false_are_defined 1
+
+#endif // __OLIVE_STDBOOL_H

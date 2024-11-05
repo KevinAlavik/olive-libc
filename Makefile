@@ -5,7 +5,7 @@
 # You can obtain a copy of the License at <https://www.gnu.org/licenses/gpl-3.0.html>
 
 INSTALL_PREFIX ?= /usr/local
-INCLUDE_DIR = $(INSTALL_PREFIX)/include
+INCLUDE_DIR = $(INSTALL_PREFIX)/include/olivelibc
 LIB_DIR = $(INSTALL_PREFIX)/lib
 
 CC = gcc
@@ -39,7 +39,7 @@ install: all
 
 test: $(TEST_OBJ)
 	mkdir -p $(BUILD_DIR)
-	$(CC) $(CFLAGS) -o $(BUILD_DIR)/test $(TEST_OBJ) -L$(LIB_DIR) -lolivelibc
+	$(CC) $(CFLAGS) -o $(BUILD_DIR)/test $(TEST_OBJ) -L$(LIB_DIR) -I$(INCLUDE_DIR) -lolivelibc
 
 $(BUILD_DIR)/%.o: $(TEST_DIR)/%.c
 	mkdir -p $(BUILD_DIR)
