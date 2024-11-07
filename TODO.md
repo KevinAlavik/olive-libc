@@ -19,7 +19,7 @@
 - [ ] <pthread.h>
 - [ ] <setjmp.h>
 - [ ] <signal.h>
-- [ ] <stdarg.h>
+- [x] <stdarg.h>
 - [x] <stdbool.h>
 - [ ] <stddef.h>
 - [ ] <stdint.h>
